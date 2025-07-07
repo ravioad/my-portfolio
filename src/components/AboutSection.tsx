@@ -141,12 +141,12 @@ export default function AboutSection() {
                 With over 5 years of experience in software development, I specialize in building 
                 modern web applications that combine cutting-edge technology with intuitive design. 
                 My passion lies in creating seamless user experiences and pushing the boundaries 
-                of what's possible on the web.
+                of what&apos;s possible on the web.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm particularly interested in generative AI, creative coding, and emerging 
-                technologies that can enhance human creativity and productivity. When I'm not 
-                coding, you'll find me exploring new frameworks, contributing to open-source 
+                I&apos;m particularly interested in generative AI, creative coding, and emerging 
+                technologies that can enhance human creativity and productivity. When I&apos;m not 
+                coding, you&apos;ll find me exploring new frameworks, contributing to open-source 
                 projects, or experimenting with AI-powered tools.
               </p>
             </div>

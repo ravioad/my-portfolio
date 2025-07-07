@@ -1,7 +1,6 @@
 "use client";
 import AboutSection from "@/components/AboutSection";
 import HeroSection from "@/components/HeroSection";
-import { motion } from "framer-motion";
 import Lenis from "lenis";
 import { useEffect, useRef } from "react";
 

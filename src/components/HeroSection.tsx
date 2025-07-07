@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { p } from "framer-motion/client";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -52,7 +51,7 @@ export default function HeroSection() {
                     className="mb-8"
                 >
                     <h1 className="text-6xl md:text-8xl mb-4 font-extrabold font-space-grotesk">
-                        <span className="gradient-text">Hi, I'm Ravi</span>
+                        <span className="gradient-text">Hi, I&apos;m Ravi</span>
                     </h1>
                     <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
                         Full Stack Engineer

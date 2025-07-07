@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { motion } from "framer-motion";
 
 const inter = Inter({
   subsets: ['latin'],
