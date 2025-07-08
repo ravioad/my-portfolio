@@ -11,8 +11,8 @@ export default function AboutSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
-      target: sectionRef,
-      offset: ["start end", "end start"]
+        target: sectionRef,
+        offset: ["start end", "end start"]
     });
 
     const y = useTransform(scrollYProgress, [0, 1], [0, -100])
@@ -59,7 +59,7 @@ export default function AboutSection() {
     }, []);
 
     return (
-        <section ref={sectionRef}  className="relative min-h-screen py-20 bg-black overflow-hidden">
+        <section ref={sectionRef} className="relative min-h-screen py-20 bg-black overflow-hidden">
 
             <motion.div style={{ y }}
                 className="absolute inset-0 opacity-10" >
@@ -104,14 +104,11 @@ export default function AboutSection() {
 
                                 <div className="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-2">
                                     <div className="w-full h-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center">
-                                        <div className="text-center">
-                                            <div className="h-24 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                                <span className="text-2xl font-bold">👨‍💻</span>
-                                            </div>
-                                            <p className="text-sm text-gray-300">
-                                                Your Photo Here
-                                            </p>
-                                        </div>
+                                        <img
+                                            src="/images/profile.png"
+                                            alt="Profile photo"
+                                            className="w-full h-full mx-auto object-cover"
+                                        />
                                     </div>
                                 </div>
 
@@ -133,24 +130,40 @@ export default function AboutSection() {
                     </motion.div>
 
                     <motion.div className="about-text space-y-8">
-            <div>
-              <h3 className="text-3xl font-bold mb-4 text-white">
-                Full-Stack Engineer
-              </h3>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                With over 5 years of experience in software development, I specialize in building 
-                modern web applications that combine cutting-edge technology with intuitive design. 
-                My passion lies in creating seamless user experiences and pushing the boundaries 
-                of what&apos;s possible on the web.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                I&apos;m particularly interested in generative AI, creative coding, and emerging 
-                technologies that can enhance human creativity and productivity. When I&apos;m not 
-                coding, you&apos;ll find me exploring new frameworks, contributing to open-source 
-                projects, or experimenting with AI-powered tools.
-              </p>
-            </div>
-            </motion.div>
+                        <div>
+                            <h3 className="text-3xl font-bold mb-4 text-white">
+                                Full-Stack Engineer
+                            </h3>
+                            <p className="text-md text-gray-300/80 leading-relaxed mb-6">
+                                With over 3 years of experience in software development, I specialize in building
+                                modern web/mobile applications that combine cutting-edge technology with intuitive design.
+                                My passion lies in creating seamless user experiences and pushing the boundaries
+                                of what&apos;s possible on the web.
+                            </p>
+                            <p className="text-md text-gray-300/80 leading-relaxed mb-6">
+                                Currently, I'm advancing my technical expertise through a Master's in Computer Science and Engineering at
+                                <span className="font-semibold text-white"> DTU</span>, specializing in Software Engineering. In the past,
+                                I've had the opportunity to develop software across diverse domains, including
+                                <span className="font-semibold text-white"> EdTech</span>,
+                                <span className="font-semibold text-white"> E-commerce</span>, and
+                                <span className="font-semibold text-white"> Health-tech</span>, working on projects like the
+                                <span className="font-semibold text-white"> Maqsad</span> e-learning application, which reached over a million downloads on <a
+                                    href="https://play.google.com/store/apps/details?id=io.maqsad&pcampaignid=web_share"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline font-semibold text-white hover:text-blue-800"
+                                >
+                                    Google Play.
+                                </a>
+                            </p>
+                            <p className="text-md text-gray-300/80 leading-relaxed">
+                                I&apos;m particularly interested in generative AI, creative coding, and emerging
+                                technologies that can enhance human creativity and productivity. When I&apos;m not
+                                coding, you&apos;ll find me exploring new frameworks, contributing to open-source
+                                projects, or experimenting with <span className="font-semibold text-white">AI-powered</span> tools.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
 

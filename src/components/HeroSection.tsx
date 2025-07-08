@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
@@ -13,7 +13,7 @@ export default function HeroSection() {
 
         for (let i = 0; i < 50; i++) {
             const particle = document.createElement("div");
-            particle.className = "float absolute w-1 h-1 bg-cyan-400/10 rounded-full";
+            particle.className = "float absolute w-1 h-1 bg-cyan-400/20 rounded-full";
             particle.style.left = Math.random() * 100 + "%";
             particle.style.top = Math.random() * 100 + "%";
             particle.style.animationDelay = Math.random() * 5 + "s";
@@ -94,7 +94,7 @@ export default function HeroSection() {
                     {[
                         { icon: Github, href: "#", label: "GitHub" },
                         { icon: Linkedin, href: "#", label: "LinkedIn" },
-                        { icon: Twitter, href: "#", label: "Twitter" },
+                        { icon: Instagram, href: "#", label: "Twitter" },
                     ].map((social) => (
                         <motion.a
                             key={social.label}
