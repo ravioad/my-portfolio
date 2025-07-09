@@ -1,3 +1,14 @@
+## ✅ To-Do List
+
+- [ ] Replace all placeholder images with final assets
+- [ ] Add `onError` fallback for broken images
+- [ ] Implement scroll-based animations using Framer Motion
+- [ ] Optimize all images for performance (lazy loading, compression)
+- [ ] Replace hardcoded text with dynamic content from API
+- [ ] Update meta tags for SEO and social sharing
+- [ ] Refactor components for better modularity and reuse
+- [ ] Add loading spinners/placeholders while fetching data
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
