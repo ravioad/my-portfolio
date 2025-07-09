@@ -1,13 +1,14 @@
 ## ✅ To-Do List
 
-- [ ] Replace all placeholder images with final assets
-- [ ] Add `onError` fallback for broken images
-- [ ] Implement scroll-based animations using Framer Motion
-- [ ] Optimize all images for performance (lazy loading, compression)
-- [ ] Replace hardcoded text with dynamic content from API
-- [ ] Update meta tags for SEO and social sharing
-- [ ] Refactor components for better modularity and reuse
-- [ ] Add loading spinners/placeholders while fetching data
+- [x] Complete ProjectsSection UI Design.
+- [ ] Complete Experience Section UI Design.
+- [ ] Complete Contact Section UI Design.
+- [ ] Complete Footer UI Design.
+- [ ] Add View All Project Page.
+- [ ] Add View Single Project Screen.
+- [ ] Complete Experience Section UI Design.
+- [ ] Add Cursor Shadow.
+- [ ] Add Download Resume Button.s
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
