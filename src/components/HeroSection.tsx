@@ -54,7 +54,7 @@ export default function HeroSection() {
                         <span className="gradient-text">Hi, I&apos;m Ravi</span>
                     </h1>
                     <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
-                        Full Stack Engineer
+                        Full-Stack Engineer
                     </h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                         Creating innovative digital experiences through code, creativity, and advanced AI. Specializing in modern web/mobile apps and generative technologies.
