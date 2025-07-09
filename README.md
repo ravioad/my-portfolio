@@ -8,4 +8,6 @@
 - [ ] Add View Single Project Screen.
 - [ ] Complete Experience Section UI Design.
 - [ ] Add Cursor Shadow.
-- [ ] Add Download Resume Button.s
+- [ ] Add Download Resume Button.
+- [ ] Add Static Projects Data.
+- [ ] Add BACK-END for data retrieval.
