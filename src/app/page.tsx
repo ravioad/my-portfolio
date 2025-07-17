@@ -1,6 +1,7 @@
 "use client";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import CursorShadow from "@/components/CursorShadow";
 import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";

@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+:root {
+  --background: #0d0d0d;
+  --foreground: #f0f0f0;
+
+  /* Your custom glow colors (these can be Tailwind built-ins like var(--tw-blue-500) if preferred) */
+  --color-neon-cyan: #00ffff;
+  --color-electric-violet: #bf00ff;
+
+  /* Define variables for the glow's properties */
+  --glow-size: 800px;  /* Default size */
+  --glow-blur: 120px;  /* Default blur */
+  --glow-opacity: 0.2; /* Default opacity */
+}
+
 @theme inline {
   --background: #0d0d0d;
   --foreground: #f0f0f0;
@@ -22,6 +36,21 @@
   --input: #2a2a2a;
   --ring: #00fff7;
   --radius: 1rem;
+
+    @keyframes pulse-shadow {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.05); /* Slightly larger */
+      opacity: 0.8; /* Slightly brighter */
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+    }
+  }
 }
 
 * {

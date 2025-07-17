@@ -8,10 +8,10 @@ import { Experience } from "@/types/experience";
 const experiences: Experience[] = [
     {
         id: 1,
-        title: "Senior Full-Stack Developer",
-        company: "TechCorp Solutions",
-        location: "San Francisco, CA",
-        period: "2022 - Present",
+        title: "Senior Software Engineer",
+        company: "Maqsad Pvt. Ltd.",
+        location: "Karachi, Pakistan",
+        period: "Aug 2021 - Present",
         description: "Leading development of AI-powered web applications, mentoring junior developers, and implementing best practices for scalable architecture.",
         technologies: ["React", "Node.js", "Python", "AWS", "Docker"],
         achievements: [
@@ -19,15 +19,15 @@ const experiences: Experience[] = [
             "Led a team of 5 developers on major client projects",
             "Implemented CI/CD pipeline reducing deployment time by 60%"
         ],
-        icon: Code,
+        icon: TrendingUp,
         color: "from-purple-500 to-pink-600"
     },
     {
         id: 2,
-        title: "AI/ML Engineer",
-        company: "InnovateAI Labs",
-        location: "New York, NY",
-        period: "2021 - 2022",
+        title: "Android Engineer",
+        company: "Rove Apps Pvt. Ltd.",
+        location: "Karachi, Pakistan",
+        period: "Jan 2021 - Sep 2021",
         description: "Developed machine learning models for natural language processing and computer vision applications.",
         technologies: ["Python", "TensorFlow", "PyTorch", "FastAPI", "PostgreSQL"],
         achievements: [
@@ -35,31 +35,31 @@ const experiences: Experience[] = [
             "Deployed ML models serving 1M+ daily requests",
             "Published 2 research papers on AI applications"
         ],
-        icon: Award,
+        icon: Code,
         color: "from-orange-500 to-red-600"
     },
-    {
-        id: 3,
-        title: "Frontend Developer",
-        company: "Creative Digital Agency",
-        location: "Los Angeles, CA",
-        period: "2020 - 2021",
-        description: "Created interactive web experiences and animations for high-profile clients in entertainment and e-commerce.",
-        technologies: ["React", "Three.js", "GSAP", "WebGL", "TypeScript"],
-        achievements: [
-            "Developed award-winning interactive website for major brand",
-            "Improved user engagement by 150% through animations",
-            "Mentored 3 junior developers in modern frontend practices"
-        ],
-        icon: TrendingUp,
-        color: "from-green-500 to-emerald-600"
-    },
+    // {
+    //     id: 3,
+    //     title: "Frontend Developer",
+    //     company: "Creative Digital Agency",
+    //     location: "Los Angeles, CA",
+    //     period: "2020 - 2021",
+    //     description: "Created interactive web experiences and animations for high-profile clients in entertainment and e-commerce.",
+    //     technologies: ["React", "Three.js", "GSAP", "WebGL", "TypeScript"],
+    //     achievements: [
+    //         "Developed award-winning interactive website for major brand",
+    //         "Improved user engagement by 150% through animations",
+    //         "Mentored 3 junior developers in modern frontend practices"
+    //     ],
+    //     icon: TrendingUp,
+    //     color: "from-green-500 to-emerald-600"
+    // },
     {
         id: 4,
-        title: "Software Engineer Intern",
-        company: "StartupXYZ",
-        location: "Austin, TX",
-        period: "2019 - 2020",
+        title: "Android Engineer Intern",
+        company: "Rove Apps Pvt. Ltd.",
+        location: "Karachi, Pakistan",
+        period: "Sep 2020 - Dec 2020",
         description: "Full-stack development focusing on building scalable web applications and APIs.",
         technologies: ["JavaScript", "Express.js", "MongoDB", "React", "Docker"],
         achievements: [
@@ -67,7 +67,7 @@ const experiences: Experience[] = [
             "Implemented real-time chat functionality",
             "Contributed to open-source projects with 100+ stars"
         ],
-        icon: Users,
+        icon: Award,
         color: "from-cyan-500 to-blue-600"
     }
 ];
