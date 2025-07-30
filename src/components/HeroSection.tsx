@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Instagram, Linkedin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
@@ -92,13 +92,15 @@ export default function HeroSection() {
                 >
 
                     {[
-                        { icon: Github, href: "#", label: "GitHub" },
-                        { icon: Linkedin, href: "#", label: "LinkedIn" },
-                        { icon: Instagram, href: "#", label: "Twitter" },
+                        { icon: Github, href: "https://github.com/ravioad", label: "GitHub" },
+                        { icon: Linkedin, href: "https://www.linkedin.com/in/ravi-oad9/", label: "LinkedIn" },
+                        { icon: Mail, href: "mailto:ravikumaroad08@gmail.com", label: "Email" },
                     ].map((social) => (
                         <motion.a
                             key={social.label}
                             href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.2, y: -5 }}
                             whileTap={{ scale: 0.9 }}
                             className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-cyan-500/20 hover:text-cyan-400 transition-all duration-300"

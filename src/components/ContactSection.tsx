@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle, Github, Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
 import { QRCodeCanvas } from "qrcode.react";
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,10 @@ export default function ContactSection() {
     const [success, setSuccess] = useState(false);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const fieldName = e.target.name === 'user_name' ? 'name' : 
+                         e.target.name === 'user_email' ? 'email' : 
+                         e.target.name;
+        setFormData({ ...formData, [fieldName]: e.target.value });
     };
 
     const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -34,11 +38,25 @@ export default function ContactSection() {
         e.preventDefault();
         setIsSubmitting(true);
         setSuccess(false);
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setIsSubmitting(false);
-        setSuccess(true);
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setSuccess(false), 2500);
+        
+        try {
+            const result = await emailjs.sendForm(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+                e.target as HTMLFormElement,
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'YOUR_USER_ID'
+            );
+            
+            console.log('Email sent successfully:', result.text);
+            setSuccess(true);
+            setFormData({ name: '', email: '', message: '' });
+        } catch (error) {
+            console.error('Email send failed:', error);
+            // You might want to show an error message here
+        } finally {
+            setIsSubmitting(false);
+            setTimeout(() => setSuccess(false), 2500);
+        }
     };
 
     return (
@@ -134,12 +152,16 @@ export default function ContactSection() {
                             <div className="mt-8">
                                 <h4 className="text-white font-semibold mb-3">Contact with me</h4>
                                 <div className="flex gap-3 justify-center">
-                                    {[{ icon: Github, href: "#", label: "GitHub" },
-                                    { icon: Linkedin, href: "#", label: "LinkedIn" },
-                                    { icon: Twitter, href: "#", label: "Twitter" }].map((social) => (
+                                    {[
+                                        { icon: Github, href: "https://github.com/ravioad", label: "GitHub" },
+                                        { icon: Linkedin, href: "https://www.linkedin.com/in/ravi-oad9/", label: "LinkedIn" },
+                                        { icon: Mail, href: "mailto:ravikumaroad08@gmail.com", label: "Email" },
+                                    ].map((social) => (
                                         <motion.a
                                             key={social.label}
                                             href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             whileHover={{ scale: 1.2, y: -5 }}
                                             whileTap={{ scale: 0.9 }}
                                             className="h-12 w-12 bg-gray-800/60 rounded-xl flex items-center justify-center hover:bg-gray-500/20 hover:text-cyan-400 transition-all duration-300 shadow-md text-gray-300"
@@ -167,7 +189,7 @@ export default function ContactSection() {
                                         <input
                                             type="text"
                                             id="name"
-                                            name="name"
+                                            name="user_name"
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             required
@@ -178,9 +200,9 @@ export default function ContactSection() {
                                     <div className="mb-6">
                                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">Email</label>
                                         <input
-                                            type="text"
+                                            type="email"
                                             id="email"
-                                            name="email"
+                                            name="user_email"
                                             value={formData.email}
                                             onChange={handleInputChange}
                                             required
