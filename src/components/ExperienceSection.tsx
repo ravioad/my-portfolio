@@ -12,7 +12,7 @@ const experiences: Experience[] = [
         company: "Maqsad Pvt. Ltd.",
         location: "Karachi, Pakistan",
         period: "Aug 2021 - Present",
-        description: "Developed Maqsad on Google Play and website, translating educational curriculum requirements into functional app features and ensuring high-quality releases. Collaborated to design, develop, and deploy custom internal tools (React website, portal).",
+        description: "Developed Maqsad app and website, translating educational curriculum requirements into functional app features and ensuring high-quality releases. Collaborated to design, develop, and deploy custom internal tools (React website, portal).",
         technologies: [
             "Kotlin",
             "TypeScript",
@@ -33,7 +33,7 @@ const experiences: Experience[] = [
             "GraphQL",
             "Postman"],
         achievements: [
-            "Developed Maqsad on Google Play, reaching over a million downloads on Google Play Store by translating educational curriculum requirements into functional app features and ensuring high-quality releases.",
+            "Developed Maqsad Android app, reaching over a million downloads on Google Play Store by translating educational curriculum requirements into functional app features and ensuring high-quality releases.",
             "Developed the Maqsad website, ensuring high-quality releases and translating educational curriculum requirements into functional application features.",
             "Collaborated with internal stakeholders to design, develop, and deploy custom internal tools (React website, portal), significantly enhancing business process efficiency and streamlining content management workflows by 40%"
         ],

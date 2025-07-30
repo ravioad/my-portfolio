@@ -1,6 +1,6 @@
 import { Experience } from "@/types/experience";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Calendar, ExternalLink, MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { useRef } from "react";
 
 export default function ExperienceCard({ experience, index }: { experience: Experience, index: number }) {
@@ -52,14 +52,7 @@ export default function ExperienceCard({ experience, index }: { experience: Expe
                                 </div>
                             </div>
 
-                            <motion.a
-                                href="#"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="mt-2 sm:mt-0 p-2 bg-cyan-500/10 text-cyan-300 rounded-lg hover:bg-cyan-500/20 transition-colors duration-300 border border-cyan-400/10"
-                            >
-                                <ExternalLink className="w-4 h-4" />
-                            </motion.a>
+
                         </div>
                         {/* Description */}
                         <p className="text-gray-200 mb-6 leading-relaxed text-base">
