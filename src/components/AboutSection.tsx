@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,11 +104,13 @@ export default function AboutSection() {
 
 
                                 <div className="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-2">
-                                    <div className="w-full h-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center">
-                                        <img
+                                    <div className="w-full h-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center relative">
+                                        <Image
                                             src="/images/profile.png"
                                             alt="Profile photo"
-                                            className="w-full h-full mx-auto object-cover"
+                                            fill
+                                            className="object-cover rounded-2xl"
+                                            sizes="(max-width: 768px) 320px, 320px"
                                         />
                                     </div>
                                 </div>
@@ -141,9 +144,9 @@ export default function AboutSection() {
                                 of what&apos;s possible on the web.
                             </p>
                             <p className="text-md text-gray-300/80 leading-relaxed mb-6">
-                                Currently, I'm advancing my technical expertise through a Master's in Computer Science and Engineering at
+                                Currently, I&apos;m advancing my technical expertise through a Master&apos;s in Computer Science and Engineering at
                                 <span className="font-semibold text-white"> DTU</span>, specializing in Software Engineering. In the past,
-                                I've had the opportunity to develop software across diverse domains, including
+                                I&apos;ve had the opportunity to develop software across diverse domains, including
                                 <span className="font-semibold text-white"> EdTech</span>,
                                 <span className="font-semibold text-white"> E-commerce</span>, and
                                 <span className="font-semibold text-white"> Health-tech</span>, working on projects like the

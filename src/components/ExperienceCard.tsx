@@ -1,7 +1,7 @@
 import { Experience } from "@/types/experience";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Calendar, ExternalLink, MapPin } from "lucide-react";
-import { use, useRef } from "react";
+import { useRef } from "react";
 
 export default function ExperienceCard({ experience, index }: { experience: Experience, index: number }) {
     const cardRef = useRef<HTMLDivElement>(null);

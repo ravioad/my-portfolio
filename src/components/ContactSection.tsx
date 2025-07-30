@@ -32,13 +32,13 @@ export default function ContactSection() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // setIsSubmitting(true);
-        // setSuccess(false);
-        // await new Promise(resolve => setTimeout(resolve, 1500));
-        // setIsSubmitting(false);
-        // setSuccess(true);
-        // setFormData({ name: '', email: '', message: '' });
-        // setTimeout(() => setSuccess(false), 2500);
+        setIsSubmitting(true);
+        setSuccess(false);
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        setIsSubmitting(false);
+        setSuccess(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSuccess(false), 2500);
     };
 
     return (
@@ -67,7 +67,7 @@ export default function ContactSection() {
                         <span className="gradient-text">Get in Touch</span>
                     </h2>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                        Let's collaborate on your next project. I'm always excited to work on innovative ideas and creative solutions.
+                        Let&apos;s collaborate on your next project. I&apos;m always excited to work on innovative ideas and creative solutions.
                     </p>
                 </motion.div>
 

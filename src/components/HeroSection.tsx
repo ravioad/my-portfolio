@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Instagram, Linkedin } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function HeroSection() {

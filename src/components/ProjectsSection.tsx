@@ -3,67 +3,60 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import { ArrowRight } from "lucide-react";
 import { Project } from "@/types/project";
 
 gsap.registerPlugin(ScrollTrigger);
 const projects: Project[] = [
     {
         id: 1,
-        title: "AI-Powered Chat Application",
-        description: "A real-time chat application with AI-powered responses, sentiment analysis, and smart suggestions.",
-        image: "/images/image-1.png",
-        tech: ["React", "Node.js", "OpenAI", "Socket.io"],
-        github: "https://github.com/ravioad/creator-pulse",
-        demo: "https://creator-pulse.ravikumaroad.com",
+        title: "Maqsad App (Android)",
+        description: "With over 1M+ downloads, the Maqsad Android app offers a mobile-first learning experience for exam prep, featuring interactive content and AI-powered doubt resolution.",
+        image: "/images/maqsad-app.png",
+        tech: ["Kotlin","Jetpack Compose", "Retrofit", "Socket.io", "Node.js (Backend)", "OpenAI"],
+        github: null,
+        demo: "https://play.google.com/store/apps/details?id=io.maqsad&hl=en",
         featured: true,
-        category: "AI/ML"
+        category: "Mobile"
     },
     {
         id: 2,
-        title: "Creative Coding Platform",
-        description: "An interactive platform for creating generative art and visual effects using WebGL and shaders.",
-        image: "/api/placeholder/400/250",
-        tech: ["Three.js", "WebGL", "TypeScript", "Vite"],
-        github: "#",
-        demo: "#",
-        featured: false,
-        category: "Web"
-    },
-    {
-        id: 3,
-        title: "E-Commerce Dashboard",
-        description: "A comprehensive dashboard for managing e-commerce operations with real-time analytics.",
-        image: "/api/placeholder/400/250",
-        tech: ["Next.js", "Prisma", "PostgreSQL", "Stripe", "React", "Framer Motion", "GSAP", "Tailwind"],
-        github: "#",
-        demo: "#",
+        title: "Online E-learning Website (Maqsad.io)",
+        description: "Maqsad.io is an online learning platform for university entrance exam prep. It offers live classes, video lectures, and a vast MCQ bank, providing an accessible and personalized educational experience.",
+        image: "/images/maqsad-website.png",
+        tech: ["Next.js","React", "Node.js", "OpenAI", "Socket.io"],
+        github: null,
+        demo: "https://maqsad.io/app/mdcat",
         featured: false,
         category: "Full-Stack"
     },
     {
         id: 4,
-        title: "Portfolio Website",
-        description: "A modern, animated portfolio website with smooth scrolling and interactive elements.",
-        image: "/api/placeholder/400/250",
-        tech: ["React", "Framer Motion", "GSAP", "Tailwind"],
-        github: "#",
-        demo: "#",
+        title: "Artifex Studio",
+        description: "An advanced AI-powered content creation platform built for efficiency. Generate unique articles, marketing copy, and creative content with intelligent AI models, backed by secure authentication and a robust backend.",
+        image: "/images/portfolio-preview.png",
+        tech: ["Next.js",
+            "React",
+            "TypeScript",
+            "Express.js",
+            "Supabase",
+            "Tailwind CSS",
+            "Generative AI"],
+        github: "https://github.com/yourusername/my-portfolio",
+        demo: "https://your-portfolio-url.com",
         featured: false,
         category: "Web"
     },
     {
-        id: 5,
-        title: "Task Management API",
-        description: "A RESTful API for task management with authentication, real-time updates, and file uploads.",
-        image: "/api/placeholder/400/250",
-        tech: ["Express.js", "MongoDB", "JWT", "Multer"],
-        github: "#",
-        featured: true,
-        demo: "#",
+        id: 3,
+        title: "Personal Portfolio",
+        description: "A modern, responsive portfolio website built with Next.js, featuring smooth animations, interactive components, and a clean design showcasing my projects and skills.",
+        image: "/images/portfolio-preview.png",
+        tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP", "Lucide Icons"],
+        github: "https://github.com/ravioad/my-portfolio",
+        demo: "https://ravikumaroad.com",
+        featured: false,
         category: "Web"
-
-    }
+    },
 ];
 
 export default function ProjectsSection() {
@@ -97,19 +90,21 @@ export default function ProjectsSection() {
                     }
                 }
             )
-            gsap.utils.toArray(".project-card").forEach((card: any, i) => {
-                gsap.to(card,
-                    {
-                        y: -30,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: card,
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: 1,
+            gsap.utils.toArray(".project-card").forEach((card: unknown) => {
+                if (card instanceof Element) {
+                    gsap.to(card,
+                        {
+                            y: -30,
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: card,
+                                start: "top bottom",
+                                end: "bottom top",
+                                scrub: 1,
+                            }
                         }
-                    }
-                )
+                    );
+                }
             });
         }, sectionRef);
 
@@ -118,7 +113,6 @@ export default function ProjectsSection() {
 
     return (
         <section ref={sectionRef} className="relative min-h-screen py-20 bg-black overflow-hidden">
-            {/* Background Elements */}
             <motion.div
                 style={{ y }}
                 className="absolute inset-0 opacity-10">
@@ -139,7 +133,6 @@ export default function ProjectsSection() {
                     </p>
 
                 </motion.div>
-                {/* Projects Container */}
 
                 <div ref={containerRef} className="projects-container">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -150,7 +143,7 @@ export default function ProjectsSection() {
                 
                 </div>
                 {/* View All Projects Button */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -161,7 +154,7 @@ export default function ProjectsSection() {
                         className="px-8 py-4 border-2 border-cyan-500 text-cyan-500 rounded-2xl font-semibold hover:bg-cyan-500 hover:text-black transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25">
                         View All Projects
                     </motion.button>
-                </motion.div>
+                </motion.div> */}
             </div>
 
             <style jsx>{`
