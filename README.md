@@ -45,12 +45,6 @@ src/
 - **Layout**: Responsive grid system
 - **Interactive Elements**: Tooltips, hover states, and dynamic content
 
-## 📱 Responsive Design
-
-The portfolio is fully responsive with breakpoints:
-- Mobile: < 768px
-- Tablet: 768px - 1024px  
-- Desktop: > 1024px
 
 ---
 
