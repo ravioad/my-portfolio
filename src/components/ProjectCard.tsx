@@ -39,7 +39,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Project Image */}
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
                     <div className="w-full h-48 bg-gradient-to-br from-gray-900 to-gray-800 group-hover:scale-105 transition-transform duration-500 relative">
-                        {/* Main Project Image */}
                         {!imageError && (
                             <Image
                                 src={project.image}
@@ -52,7 +51,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             />
                         )}
 
-                        {/* Fallback Content */}
                         {imageError && (
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <div className="text-center">
@@ -63,11 +61,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                 </div>
                             </div>
                         )}
-                        {/* Image Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
 
-                    {/* Category Badge */}
                     <div className="absolute top-4 left-4 z-10">
                         <span className="px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-medium rounded-full border border-teal-500/30 backdrop-blur-sm">
                             {project.category}
@@ -75,15 +71,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     </div>
                 </div>
 
-                {/* Project Content */}
                 <div className="space-y-4">
                     <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
                         {project.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
-                        {project.description}
-                    </p>
-                    {/* Tech Stack */}
+                    <div className="relative group/description">
+                        <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 cursor-help">
+                            {project.description}
+                        </p>
+                        <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-black/90 backdrop-blur-lg rounded-lg shadow-2xl opacity-0 group-hover/description:opacity-100 transition-opacity duration-200 pointer-events-none z-20 max-w-xs border border-gray-800/30">
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                                {project.description}
+                            </p>
+                            <div className="absolute top-full left-6 -mt-px">
+                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 8L0 0L16 0L8 8Z" fill="rgb(0 0 0 / 0.9)"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="flex flex-wrap gap-2">
                         {project.tech.slice(0, 4).map((tech) => (
