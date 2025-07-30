@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
@@ -19,6 +19,7 @@ export default function ContactSection() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [qrValue, setQrValue] = useState('');
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const fieldName = e.target.name === 'user_name' ? 'name' : 
@@ -33,6 +34,20 @@ export default function ContactSection() {
     const copyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text);
     };
+
+    const downloadVCard = () => {
+        const link = document.createElement('a');
+        link.href = '/vcard.vcf';
+        link.download = 'ravi-kumar.vcf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    // Set QR value on client side
+    useEffect(() => {
+        setQrValue(`${window.location.origin}/vcard.vcf`);
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -135,14 +150,20 @@ export default function ContactSection() {
                                 {/* vCard & QR */}
                                 <div className="my-6">
                                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-gray-800/60 border border-cyan-400/10 rounded-2xl p-4 shadow-inner">
-                                        <a
-                                            href="/vcard.vcf"
-                                            download
-                                            className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold shadow hover:from-cyan-600 hover:to-purple-600 transition-colors duration-200 whitespace-nowrap">
+                                        <motion.button
+                                            onClick={downloadVCard}
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold shadow hover:from-cyan-600 hover:to-purple-600 transition-colors duration-200 whitespace-nowrap flex items-center gap-2">
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                                            </svg>
                                             Download vCard
-                                        </a>
+                                        </motion.button>
                                         <div className="flex flex-col items-center">
-                                            <QRCodeCanvas value="https://drive.google.com/uc?export=download&id=1iM4mVCJU92M0_-j9vavUXoJ48hdKUcjg" size={64} bgColor="#18181b" fgColor="#00fff7" />
+                                            {qrValue && (
+                                                <QRCodeCanvas value={qrValue} size={64} bgColor="#18181b" fgColor="#00fff7" />
+                                            )}
                                             <div className="text-xs mt-1 text-gray-400 text-center">Scan to add contact</div>
                                         </div>
                                     </div>
