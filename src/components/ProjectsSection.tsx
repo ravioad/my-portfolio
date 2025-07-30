@@ -31,17 +31,6 @@ const projects: Project[] = [
     },
     {
         id: 3,
-        title: "Personal Portfolio",
-        description: "A modern, responsive portfolio website built with Next.js, featuring smooth animations, interactive components, and a clean design showcasing my projects and skills.",
-        image: "/images/portfolio.png",
-        tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP", "Lucide Icons"],
-        github: "https://github.com/ravioad/my-portfolio",
-        demo: "https://www.ravikumaroad.com",
-        featured: false,
-        category: "Web"
-    },
-    {
-        id: 4,
         title: "Artifex Studio",
         description: "An advanced AI-powered content creation platform built for efficiency. Generate unique articles, marketing copy, and creative content with intelligent AI models, backed by secure authentication and a robust backend.",
         image: "/images/artifex-studio.png",
@@ -54,6 +43,17 @@ const projects: Project[] = [
             "Generative AI"],
         github: "https://github.com/ravioad/artifex-studio",
         demo: "https://artifex-studio.ravikumaroad.com",
+        featured: false,
+        category: "Web"
+    },
+    {
+        id: 4,
+        title: "Personal Portfolio",
+        description: "A modern, responsive portfolio website built with Next.js, featuring smooth animations, interactive components, and a clean design showcasing my projects and skills.",
+        image: "/images/portfolio.png",
+        tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP", "Lucide Icons"],
+        github: "https://github.com/ravioad/my-portfolio",
+        demo: "https://www.ravikumaroad.com",
         featured: false,
         category: "Web"
     },
