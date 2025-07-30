@@ -142,6 +142,16 @@ export default function ExperienceSection() {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => {
+                            const link = document.createElement('a');
+                            link.href = '/resume.pdf';
+                            link.download = 'Ravi_Kumar_Resume.pdf';
+                            link.target = '_blank';
+                            
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        }}
                         className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-2xl font-semibold glow hover:glow transition-all duration-300">
                         Download Full Resume
                     </motion.button>
