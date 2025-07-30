@@ -70,14 +70,47 @@ export default function HeroSection() {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => {
+                            const projectsSection = document.getElementById('projects');
+                            
+                            if (projectsSection && window.lenis) {
+                                console.log('Using Lenis scroll');
+                                window.lenis.scrollTo(projectsSection, {
+                                    offset: 0,
+                                    duration: 1.2
+                                });
+                            } else if (projectsSection) {
+                                console.log('Using native scroll');
+                                projectsSection.scrollIntoView({ 
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            } else {
+                                console.log('Projects section not found');
+                            }
+                        }}
                         className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-semibold glow hover:glow transition-all duration-300 "
                     >
                         View Projects
                     </motion.button>
 
                     <motion.button
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => {
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection && window.lenis) {
+                                window.lenis.scrollTo(contactSection, {
+                                    offset: 0,
+                                    duration: 1.2
+                                });
+                            } else if (contactSection) {
+                                contactSection.scrollIntoView({ 
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }}
                         className="px-8 py-4 border-2 border-cyan-500 text-cyan-500 rounded-2xl font-semibold hover:bg-cyan-500 hover:text-black transition-all duration-300">
                         Contact Me
                     </motion.button>

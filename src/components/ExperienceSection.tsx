@@ -12,12 +12,30 @@ const experiences: Experience[] = [
         company: "Maqsad Pvt. Ltd.",
         location: "Karachi, Pakistan",
         period: "Aug 2021 - Present",
-        description: "Leading development of AI-powered web applications, mentoring junior developers, and implementing best practices for scalable architecture.",
-        technologies: ["React", "Node.js", "Python", "AWS", "Docker"],
+        description: "Developed Maqsad on Google Play and website, translating educational curriculum requirements into functional app features and ensuring high-quality releases. Collaborated to design, develop, and deploy custom internal tools (React website, portal).",
+        technologies: [
+            "Kotlin",
+            "TypeScript",
+            "Python",
+            "React",
+            "Next.js",
+            "HTML",
+            "CSS",
+            "Firebase",
+            "Google Cloud",
+            "AWS",
+            "DynamoDB",
+            "Git",
+            "CI/CD",
+            "GitHub Actions",
+            "Docker",
+            "RESTful APIs",
+            "GraphQL",
+            "Postman"],
         achievements: [
-            "Reduced application load time by 40% through optimization",
-            "Led a team of 5 developers on major client projects",
-            "Implemented CI/CD pipeline reducing deployment time by 60%"
+            "Developed Maqsad on Google Play, reaching over a million downloads on Google Play Store by translating educational curriculum requirements into functional app features and ensuring high-quality releases.",
+            "Developed the Maqsad website, ensuring high-quality releases and translating educational curriculum requirements into functional application features.",
+            "Collaborated with internal stakeholders to design, develop, and deploy custom internal tools (React website, portal), significantly enhancing business process efficiency and streamlining content management workflows by 40%"
         ],
         icon: TrendingUp,
         color: "from-purple-500 to-pink-600"
@@ -28,44 +46,35 @@ const experiences: Experience[] = [
         company: "Rove Apps Pvt. Ltd.",
         location: "Karachi, Pakistan",
         period: "Jan 2021 - Sep 2021",
-        description: "Developed machine learning models for natural language processing and computer vision applications.",
-        technologies: ["Python", "TensorFlow", "PyTorch", "FastAPI", "PostgreSQL"],
+        description: "Led Android development for a client's e-commerce app and a personalized mobile health app. Collaborated on 5 custom mobile apps through the full software development lifecycle.",
+        technologies: [  "Java",
+            "Kotlin",
+            "Android Studio",
+            "Jetpack Compose",
+            "Firebase",
+            "Git",
+            "RESTful APIs",
+            "Postman"],
         achievements: [
-            "Built NLP model achieving 95% accuracy on sentiment analysis",
-            "Deployed ML models serving 1M+ daily requests",
-            "Published 2 research papers on AI applications"
-        ],
+            "Led Android development (Java/Kotlin) for a client's e-commerce application, implementing unique features that boosted user engagement and met client business needs.",
+            "Designed and built a personalized mobile health application, showcasing versatility across diverse product domains.",
+            "Collaborated effectively within cross-functional teams throughout the full software development lifecycle for 5 distinct custom mobile applications, ensuring successful delivery within project deadlines."
+          ],
         icon: Code,
         color: "from-orange-500 to-red-600"
     },
-    // {
-    //     id: 3,
-    //     title: "Frontend Developer",
-    //     company: "Creative Digital Agency",
-    //     location: "Los Angeles, CA",
-    //     period: "2020 - 2021",
-    //     description: "Created interactive web experiences and animations for high-profile clients in entertainment and e-commerce.",
-    //     technologies: ["React", "Three.js", "GSAP", "WebGL", "TypeScript"],
-    //     achievements: [
-    //         "Developed award-winning interactive website for major brand",
-    //         "Improved user engagement by 150% through animations",
-    //         "Mentored 3 junior developers in modern frontend practices"
-    //     ],
-    //     icon: TrendingUp,
-    //     color: "from-green-500 to-emerald-600"
-    // },
     {
         id: 4,
         title: "Android Engineer Intern",
         company: "Rove Apps Pvt. Ltd.",
         location: "Karachi, Pakistan",
         period: "Sep 2020 - Dec 2020",
-        description: "Full-stack development focusing on building scalable web applications and APIs.",
-        technologies: ["JavaScript", "Express.js", "MongoDB", "React", "Docker"],
+        description: "Contributed to the end-to-end development of Android applications, working across diverse product domains to deliver robust and user-centric mobile solutions.",
+        technologies: ["Kotlin", "Java", "Android Studio", "Jetpack Compose", "Firebase", "Git", "RESTful APIs", "Retrofit"],
         achievements: [
-            "Built complete e-commerce platform from scratch",
-            "Implemented real-time chat functionality",
-            "Contributed to open-source projects with 100+ stars"
+            "Led Android development for a client’s e-commerce platform, integrating advanced features that increased user engagement.",
+            "Developed and deployed a personalized mobile health app, highlighting versatility in domain-specific mobile development.",
+            "Delivered 5+ custom Android apps in collaboration with cross-functional teams, ensuring timely releases and full SDLC coverage."
         ],
         icon: Award,
         color: "from-cyan-500 to-blue-600"
@@ -130,10 +139,10 @@ export default function ExperienceSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                     className="text-center mt-24">
-                    <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-2xl font-semibold glow hover:glow transition-all duration-300">
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-2xl font-semibold glow hover:glow transition-all duration-300">
                         Download Full Resume
                     </motion.button>
                 </motion.div>
