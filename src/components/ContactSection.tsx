@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
-import { CheckCircle, Github, Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
+import { CheckCircle, Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { QRCodeCanvas } from "qrcode.react";
 import emailjs from '@emailjs/browser';
 
