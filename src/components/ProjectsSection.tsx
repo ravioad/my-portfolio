@@ -39,6 +39,7 @@ const projects: Project[] = [
             "TypeScript",
             "Express.js",
             "Supabase",
+            "OAuth 2.0",
             "Tailwind CSS",
             "Generative AI"],
         github: "https://github.com/ravioad/artifex-studio",
