@@ -133,7 +133,7 @@ export default function ExperienceSection() {
                     </div>
                 </div>
                 {/* Download Resume Button */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -155,7 +155,7 @@ export default function ExperienceSection() {
                         className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-2xl font-semibold glow hover:glow transition-all duration-300">
                         Download Full Resume
                     </motion.button>
-                </motion.div>
+                </motion.div> */}
             </div>
 
         </section>
