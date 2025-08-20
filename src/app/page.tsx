@@ -6,29 +6,42 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import Lenis from "lenis";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
 
   const lenisRef = useRef<Lenis | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    lenisRef.current = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    })
-    window.lenis = lenisRef.current;
+    // Detect mobile devices
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
 
-    function raf(time: number) {
-      lenisRef.current?.raf(time);
+    // Only initialize Lenis on desktop for better mobile performance
+    if (!isMobile) {
+      lenisRef.current = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        touchMultiplier: 0, // Disable touch scrolling to prevent conflicts
+      })
+      window.lenis = lenisRef.current;
+
+      function raf(time: number) {
+        lenisRef.current?.raf(time);
+        requestAnimationFrame(raf);
+      }
       requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
     return () => {
+      window.removeEventListener('resize', checkMobile);
       lenisRef?.current?.destroy();
     };
-  }, [])
+  }, [isMobile])
 
 
   return (

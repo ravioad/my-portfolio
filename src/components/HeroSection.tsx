@@ -1,26 +1,57 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 
 export default function HeroSection() {
 
     const particlesRef = useRef<HTMLDivElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Detect mobile device
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Memoize particle creation to prevent recreation on every render
+    const particleElements = useMemo(() => {
+        const elements = [];
+        const particleCount = isMobile ? 20 : 50; // Reduce particles on mobile
+        
+        for (let i = 0; i < particleCount; i++) {
+            elements.push({
+                id: i,
+                left: Math.random() * 100 + "%",
+                top: Math.random() * 100 + "%",
+                animationDelay: Math.random() * 5 + "s",
+                animationDuration: (Math.random() * 3 + 2) + "s"
+            });
+        }
+        return elements;
+    }, [isMobile]);
 
     useEffect(() => {
-
         const particles = particlesRef.current;
         if (!particles) return;
 
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement("div");
-            particle.className = "float absolute w-1 h-1 bg-cyan-400/20 rounded-full";
-            particle.style.left = Math.random() * 100 + "%";
-            particle.style.top = Math.random() * 100 + "%";
-            particle.style.animationDelay = Math.random() * 5 + "s";
-            particle.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            particles.appendChild(particle);
-        }
-    })
+        // Clear existing particles
+        particles.innerHTML = '';
+
+        // Create particles based on memoized data
+        particleElements.forEach(particle => {
+            const element = document.createElement("div");
+            element.className = "float absolute w-1 h-1 bg-cyan-400/20 rounded-full";
+            element.style.left = particle.left;
+            element.style.top = particle.top;
+            element.style.animationDelay = particle.animationDelay;
+            element.style.animationDuration = particle.animationDuration;
+            particles.appendChild(element);
+        });
+    }, [particleElements])
 
     return (
         <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black  overflow-hidden">

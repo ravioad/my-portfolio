@@ -1,11 +1,9 @@
-import { useEffect, useRef } from "react";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { Project } from "@/types/project";
 
-gsap.registerPlugin(ScrollTrigger);
+// Move projects data outside component to prevent recreation
 const projects: Project[] = [
     {
         id: 1,
@@ -63,54 +61,55 @@ const projects: Project[] = [
 export default function ProjectsSection() {
 
     const sectionRef = useRef<HTMLElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
+    const [reduceMotion, setReduceMotion] = useState(false);
+    
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start end", "end start"]
     });
+    
     const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
+    // Check for reduced motion preference
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.fromTo(".project-card",
-                {
-                    opacity: 0, y: 100, scale: 0.8
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.8,
-                    stagger: 0.2,
-                    scrollTrigger: {
-                        trigger: ".projects-container",
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none reverse"
-                    }
-                }
-            )
-            gsap.utils.toArray(".project-card").forEach((card: unknown) => {
-                if (card instanceof Element) {
-                    gsap.to(card,
-                        {
-                            y: -30,
-                            ease: "none",
-                            scrollTrigger: {
-                                trigger: card,
-                                start: "top bottom",
-                                end: "bottom top",
-                                scrub: 1,
-                            }
-                        }
-                    );
-                }
-            });
-        }, sectionRef);
-
-        return () => ctx.revert();
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        setReduceMotion(mediaQuery.matches);
+        
+        const handleChange = () => setReduceMotion(mediaQuery.matches);
+        mediaQuery.addEventListener('change', handleChange);
+        
+        return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
+
+    // Container animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: reduceMotion ? 0 : 0.2,
+                duration: reduceMotion ? 0.3 : 0.6
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { 
+            opacity: 0, 
+            y: reduceMotion ? 0 : 50,
+            scale: reduceMotion ? 1 : 0.9
+        },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            scale: 1,
+            transition: {
+                duration: reduceMotion ? 0.2 : 0.6,
+                ease: [0.25, 0.1, 0.25, 1] as const
+            }
+        }
+    };
 
     return (
         <section ref={sectionRef} className="relative min-h-screen py-20 bg-black overflow-hidden">
@@ -135,46 +134,22 @@ export default function ProjectsSection() {
 
                 </motion.div>
 
-                <div ref={containerRef} className="projects-container">
+                <motion.div 
+                    className="projects-container"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                >
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
                         {projects.map((project) => (
-                            <ProjectCard project={project} key={project.id} />
+                            <motion.div key={project.id} variants={itemVariants}>
+                                <ProjectCard project={project} />
+                            </motion.div>
                         ))}
                     </div>
-                
-                </div>
-                {/* View All Projects Button */}
-                {/* <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mt-16">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 border-2 border-cyan-500 text-cyan-500 rounded-2xl font-semibold hover:bg-cyan-500 hover:text-black transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25">
-                        View All Projects
-                    </motion.button>
-                </motion.div> */}
+                </motion.div>
             </div>
-
-            <style jsx>{`
-                        .scrollbar-hide {
-                            -ms-overflow-style: none;
-                            scrollbar-width: none;
-                        }  
-                        .scrollbar-hide::-webkit-scrollbar {
-                            display: none;
-                        }
-        
-                        .line-clamp-3 {
-                            display: -webkit-box;
-                            -webkit-line-clamp: 3;
-                            -webkit-box-orient: vertical;
-                            overflow: hidden;
-                    }
-                    `}
-            </style>
         </section>
     );
 }
