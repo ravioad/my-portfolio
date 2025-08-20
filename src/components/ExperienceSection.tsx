@@ -19,12 +19,16 @@ const experiences: Experience[] = [
             "Python",
             "React",
             "Next.js",
+            "Node.js",
+            "Express.js",
+            "NestJS",
             "HTML",
             "CSS",
             "Firebase",
             "Google Cloud",
             "AWS",
             "DynamoDB",
+            "PostgreSQL",
             "Git",
             "CI/CD",
             "GitHub Actions",
@@ -33,9 +37,10 @@ const experiences: Experience[] = [
             "GraphQL",
             "Postman"],
         achievements: [
-            "Developed Maqsad Android app, reaching over a million downloads on Google Play Store by translating educational curriculum requirements into functional app features and ensuring high-quality releases.",
-            "Developed the Maqsad website, ensuring high-quality releases and translating educational curriculum requirements into functional application features.",
-            "Collaborated with internal stakeholders to design, develop, and deploy custom internal tools (React website, portal), significantly enhancing business process efficiency and streamlining content management workflows by 40%"
+            "Built and maintained the Maqsad Android app (1M+ installs) with staged rollouts and CI/CD, improving crash-free sessions and release stability.",
+            "Developed the Maqsad website, translating educational curriculum requirements into functional application features for a fast, modular React UI.",
+            "Built internal React portals and process tools that streamlined content operations and reduced manual steps for non-technical users.",
+            "Drove quality assurance practices (feature flags, rollout monitoring) to keep releases predictable and stable."
         ],
         icon: TrendingUp,
         color: "from-purple-500 to-pink-600"
