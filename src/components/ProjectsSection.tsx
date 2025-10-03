@@ -40,7 +40,7 @@ const projects: Project[] = [
             "OAuth 2.0",
             "Tailwind CSS",
             "Generative AI"],
-        github: "https://github.com/ravioad/artifex-studio",
+        github: null,
         demo: "https://artifex-studio.ravikumaroad.com",
         featured: false,
         category: "Web"
