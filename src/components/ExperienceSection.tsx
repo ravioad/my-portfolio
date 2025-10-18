@@ -11,7 +11,7 @@ const experiences: Experience[] = [
         title: "Senior Software Engineer",
         company: "Maqsad Pvt. Ltd.",
         location: "Karachi, Pakistan",
-        period: "Aug 2021 - Present",
+        period: "Aug 2021 - Oct 2025",
         description: "Developed Maqsad app and website, translating educational curriculum requirements into functional app features and ensuring high-quality releases. Collaborated to design, develop, and deploy custom internal tools (React website, portal).",
         technologies: [
             "Kotlin",
