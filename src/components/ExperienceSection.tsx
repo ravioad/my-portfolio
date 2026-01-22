@@ -10,80 +10,73 @@ const experiences: Experience[] = [
         id: 1,
         title: "Senior Software Engineer",
         company: "Maqsad Pvt. Ltd.",
-        location: "Karachi, Pakistan",
-        period: "Aug 2021 - Oct 2025",
-        description: "Developed Maqsad app and website, translating educational curriculum requirements into functional app features and ensuring high-quality releases. Collaborated to design, develop, and deploy custom internal tools (React website, portal).",
+        location: "Karachi, Pakistan (Remote)",
+        period: "Aug 2021 – Oct 2025",
+        description: "Developed and maintained the Maqsad web platform, ensuring 100% visual consistency with Figma designs and high performance for over 1 million users. Partnered with Product and Marketing teams to translate curriculum requirements into functional, accessible web features.",
         technologies: [
-            "Kotlin",
-            "TypeScript",
-            "Python",
             "React",
+            "TypeScript",
+            "Tailwind CSS",
             "Next.js",
+            "NestJS",
             "Node.js",
             "Express.js",
-            "NestJS",
             "HTML",
             "CSS",
-            "Firebase",
-            "Google Cloud",
-            "AWS",
-            "DynamoDB",
-            "PostgreSQL",
             "Git",
             "CI/CD",
             "GitHub Actions",
             "Docker",
             "RESTful APIs",
-            "GraphQL",
             "Postman"],
         achievements: [
-            "Built and maintained the Maqsad Android app (1M+ installs) with staged rollouts and CI/CD, improving crash-free sessions and release stability.",
-            "Developed the Maqsad website, translating educational curriculum requirements into functional application features for a fast, modular React UI.",
-            "Built internal React portals and process tools that streamlined content operations and reduced manual steps for non-technical users.",
-            "Drove quality assurance practices (feature flags, rollout monitoring) to keep releases predictable and stable."
+            "Developed and maintained the Maqsad web platform using Tailwind CSS, ensuring 100% visual consistency with Figma designs and high performance for over 1 million users.",
+            "Partnered closely with Product and Marketing teams to translate curriculum requirements into functional, accessible web features, contributing to a 30% improvement in UX metrics.",
+            "Designed and deployed custom internal React portals, streamlining content management workflows by 40% through reusable component architecture.",
+            "Ensured cross-browser compatibility and optimized asset delivery for mobile-first users in low-bandwidth environments."
         ],
         icon: TrendingUp,
         color: "from-purple-500 to-pink-600"
     },
     {
         id: 2,
-        title: "Android Engineer",
-        company: "Rove Apps Pvt. Ltd.",
+        title: "Mobile Developer",
+        company: "Rove Apps",
         location: "Karachi, Pakistan",
-        period: "Jan 2021 - Sep 2021",
-        description: "Led Android development for a client's e-commerce app and a personalized mobile health app. Collaborated on 5 custom mobile apps through the full software development lifecycle.",
-        technologies: [  "Java",
-            "Kotlin",
-            "Android Studio",
-            "Jetpack Compose",
-            "Firebase",
+        period: "Sep 2020 – July 2021",
+        description: "Led frontend development for diverse client projects, focusing on responsive layouts and fine-tuning spacing/typography to ensure a premium feel across desktop and mobile. Collaborated in cross-functional teams across the full SDLC for 5+ custom applications.",
+        technologies: [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "React",
             "Git",
-            "RESTful APIs",
-            "Postman"],
+            "RESTful APIs"
+        ],
         achievements: [
-            "Led Android development (Java/Kotlin) for a client's e-commerce application, implementing unique features that boosted user engagement and met client business needs.",
-            "Designed and built a personalized mobile health application, showcasing versatility across diverse product domains.",
-            "Collaborated effectively within cross-functional teams throughout the full software development lifecycle for 5 distinct custom mobile applications, ensuring successful delivery within project deadlines."
-          ],
+            "Led the frontend development for diverse client projects, focusing on responsive layouts and fine-tuning spacing/typography to ensure a premium feel across desktop and mobile.",
+            "Implemented naming conventions and modular CSS/JS patterns to ensure long-term maintainability of client codebases.",
+            "Collaborated in a cross-functional team across the full SDLC for 5+ custom applications, delivering high-quality UI details under tight scale-up deadlines."
+        ],
         icon: Code,
         color: "from-orange-500 to-red-600"
     },
-    {
-        id: 4,
-        title: "Android Engineer Intern",
-        company: "Rove Apps Pvt. Ltd.",
-        location: "Karachi, Pakistan",
-        period: "Sep 2020 - Dec 2020",
-        description: "Contributed to the end-to-end development of Android applications, working across diverse product domains to deliver robust and user-centric mobile solutions.",
-        technologies: ["Kotlin", "Java", "Android Studio", "Jetpack Compose", "Firebase", "Git", "RESTful APIs", "Retrofit"],
-        achievements: [
-            "Led Android development for a client’s e-commerce platform, integrating advanced features that increased user engagement.",
-            "Developed and deployed a personalized mobile health app, highlighting versatility in domain-specific mobile development.",
-            "Delivered 5+ custom Android apps in collaboration with cross-functional teams, ensuring timely releases and full SDLC coverage."
-        ],
-        icon: Award,
-        color: "from-cyan-500 to-blue-600"
-    }
+    // {
+    //     id: 4,
+    //     title: "Android Engineer Intern",
+    //     company: "Rove Apps Pvt. Ltd.",
+    //     location: "Karachi, Pakistan",
+    //     period: "Sep 2020 - Dec 2020",
+    //     description: "Contributed to the end-to-end development of Android applications, working across diverse product domains to deliver robust and user-centric mobile solutions.",
+    //     technologies: ["Kotlin", "Java", "Android Studio", "Jetpack Compose", "Firebase", "Git", "RESTful APIs", "Retrofit"],
+    //     achievements: [
+    //         "Led Android development for a client’s e-commerce platform, integrating advanced features that increased user engagement.",
+    //         "Developed and deployed a personalized mobile health app, highlighting versatility in domain-specific mobile development.",
+    //         "Delivered 5+ custom Android apps in collaboration with cross-functional teams, ensuring timely releases and full SDLC coverage."
+    //     ],
+    //     icon: Award,
+    //     color: "from-cyan-500 to-blue-600"
+    // }
 ];
 
 export default function ExperienceSection() {
