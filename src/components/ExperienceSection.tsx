@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Award, Code, TrendingUp } from "lucide-react";
+import { Code, TrendingUp } from "lucide-react";
 import { useRef } from "react";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "@/types/experience";
