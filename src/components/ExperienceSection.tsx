@@ -8,32 +8,30 @@ import { Experience } from "@/types/experience";
 const experiences: Experience[] = [
     {
         id: 1,
-        title: "Senior Software Engineer",
+        title: "Software Engineer",
         company: "Maqsad Pvt. Ltd.",
-        location: "Karachi, Pakistan (Remote)",
-        period: "Aug 2021 – Oct 2025",
-        description: "Developed and maintained the Maqsad web platform, ensuring 100% visual consistency with Figma designs and high performance for over 1 million users. Partnered with Product and Marketing teams to translate curriculum requirements into functional, accessible web features.",
+        location: "Karachi, Pakistan",
+        period: "Aug 2021 – Oct 2025 (Remote)",
+        description: "Owned backend and full-stack features for a large-scale educational platform with over 1M users, translating complex business and curriculum requirements into reliable production systems.",
         technologies: [
             "React",
             "TypeScript",
-            "Tailwind CSS",
-            "Next.js",
-            "NestJS",
             "Node.js",
+            "NestJS",
             "Express.js",
-            "HTML",
-            "CSS",
+            "RESTful APIs",
             "Git",
+            "PostgreSQL",
             "CI/CD",
             "GitHub Actions",
-            "Docker",
-            "RESTful APIs",
-            "Postman"],
+            "Docker"
+        ],
         achievements: [
-            "Developed and maintained the Maqsad web platform using Tailwind CSS, ensuring 100% visual consistency with Figma designs and high performance for over 1 million users.",
-            "Partnered closely with Product and Marketing teams to translate curriculum requirements into functional, accessible web features, contributing to a 30% improvement in UX metrics.",
-            "Designed and deployed custom internal React portals, streamlining content management workflows by 40% through reusable component architecture.",
-            "Ensured cross-browser compatibility and optimized asset delivery for mobile-first users in low-bandwidth environments."
+            "Owned backend and full-stack features for a large-scale educational platform with over 1M users, translating complex business and curriculum requirements into reliable production systems.",
+            "Built and maintained internal web-based tools used daily by operations and content teams, improving workflow efficiency by approximately 40%.",
+            "Designed and implemented APIs and backend logic supporting reporting, content management, and user-facing features.",
+            "Worked closely with product, design, and QA to deliver high-impact features while maintaining system stability.",
+            "Took responsibility for production issues, debugging data-related and backend problems under real-world constraints."
         ],
         icon: TrendingUp,
         color: "from-purple-500 to-pink-600"
@@ -44,39 +42,22 @@ const experiences: Experience[] = [
         company: "Rove Apps",
         location: "Karachi, Pakistan",
         period: "Sep 2020 – July 2021",
-        description: "Led frontend development for diverse client projects, focusing on responsive layouts and fine-tuning spacing/typography to ensure a premium feel across desktop and mobile. Collaborated in cross-functional teams across the full SDLC for 5+ custom applications.",
+        description: "Led Android development for client e-commerce and multi-domain projects, collaborating across the full development lifecycle.",
         technologies: [
-            "JavaScript",
-            "HTML",
-            "CSS",
-            "React",
-            "Git",
-            "RESTful APIs"
+            "Kotlin",
+            "Java",
+            "Android Studio",
+            "RESTful APIs",
+            "Git"
         ],
         achievements: [
-            "Led the frontend development for diverse client projects, focusing on responsive layouts and fine-tuning spacing/typography to ensure a premium feel across desktop and mobile.",
-            "Implemented naming conventions and modular CSS/JS patterns to ensure long-term maintainability of client codebases.",
-            "Collaborated in a cross-functional team across the full SDLC for 5+ custom applications, delivering high-quality UI details under tight scale-up deadlines."
+            "Led Android development for a client e-commerce application, implementing business-critical features and integrating backend APIs.",
+            "Delivered multiple client projects across different domains, collaborating across the full development lifecycle.",
+            "Gained early experience working with complex state, user flows, and production deadlines."
         ],
         icon: Code,
         color: "from-orange-500 to-red-600"
-    },
-    // {
-    //     id: 4,
-    //     title: "Android Engineer Intern",
-    //     company: "Rove Apps Pvt. Ltd.",
-    //     location: "Karachi, Pakistan",
-    //     period: "Sep 2020 - Dec 2020",
-    //     description: "Contributed to the end-to-end development of Android applications, working across diverse product domains to deliver robust and user-centric mobile solutions.",
-    //     technologies: ["Kotlin", "Java", "Android Studio", "Jetpack Compose", "Firebase", "Git", "RESTful APIs", "Retrofit"],
-    //     achievements: [
-    //         "Led Android development for a client’s e-commerce platform, integrating advanced features that increased user engagement.",
-    //         "Developed and deployed a personalized mobile health app, highlighting versatility in domain-specific mobile development.",
-    //         "Delivered 5+ custom Android apps in collaboration with cross-functional teams, ensuring timely releases and full SDLC coverage."
-    //     ],
-    //     icon: Award,
-    //     color: "from-cyan-500 to-blue-600"
-    // }
+    }
 ];
 
 export default function ExperienceSection() {
