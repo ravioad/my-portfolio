@@ -59,6 +59,7 @@ const projects: Project[] = [
 export default function ProjectsSection() {
 
     const sectionRef = useRef<HTMLElement>(null);
+
     const [reduceMotion, setReduceMotion] = useState(false);
 
     const { scrollYProgress } = useScroll({
