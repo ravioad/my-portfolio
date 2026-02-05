@@ -10,7 +10,7 @@ const projects: Project[] = [
         title: "Maqsad App (Android)",
         description: "With over 1M+ downloads, the Maqsad Android app offers a mobile-first learning experience for exam prep, featuring interactive content and AI-powered doubt resolution.",
         image: "/images/maqsad-app.png",
-        tech: ["Kotlin","Jetpack Compose", "Retrofit", "Socket.io", "Node.js (Backend)", "OpenAI"],
+        tech: ["Kotlin", "Jetpack Compose", "Retrofit", "Socket.io", "Node.js (Backend)", "OpenAI"],
         github: null,
         demo: "https://play.google.com/store/apps/details?id=io.maqsad&hl=en",
         featured: true,
@@ -43,29 +43,29 @@ const projects: Project[] = [
         featured: false,
         category: "Web"
     },
-    {
-        id: 4,
-        title: "Personal Portfolio",
-        description: "A modern, responsive portfolio website built with Next.js, featuring smooth animations, interactive components, and a clean design showcasing my projects and skills.",
-        image: "/images/portfolio.png",
-        tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP", "Lucide Icons"],
-        github: "https://github.com/ravioad/my-portfolio",
-        demo: "https://www.ravikumaroad.com",
-        featured: false,
-        category: "Web"
-    },
+    // {
+    //     id: 4,
+    //     title: "Personal Portfolio",
+    //     description: "A modern, responsive portfolio website built with Next.js, featuring smooth animations, interactive components, and a clean design showcasing my projects and skills.",
+    //     image: "/images/portfolio.png",
+    //     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP", "Lucide Icons"],
+    //     github: "https://github.com/ravioad/my-portfolio",
+    //     demo: "https://www.ravikumaroad.com",
+    //     featured: false,
+    //     category: "Web"
+    // },
 ];
 
 export default function ProjectsSection() {
 
     const sectionRef = useRef<HTMLElement>(null);
     const [reduceMotion, setReduceMotion] = useState(false);
-    
+
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start end", "end start"]
     });
-    
+
     const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
@@ -73,10 +73,10 @@ export default function ProjectsSection() {
     useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
         setReduceMotion(mediaQuery.matches);
-        
+
         const handleChange = () => setReduceMotion(mediaQuery.matches);
         mediaQuery.addEventListener('change', handleChange);
-        
+
         return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
@@ -93,13 +93,13 @@ export default function ProjectsSection() {
     };
 
     const itemVariants = {
-        hidden: { 
-            opacity: 0, 
+        hidden: {
+            opacity: 0,
             y: reduceMotion ? 0 : 50,
             scale: reduceMotion ? 1 : 0.9
         },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
             scale: 1,
             transition: {
@@ -132,7 +132,7 @@ export default function ProjectsSection() {
 
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     className="projects-container"
                     variants={containerVariants}
                     initial="hidden"
